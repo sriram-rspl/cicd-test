@@ -6,8 +6,7 @@ FROM ubuntu:latest
 
 #Install WGET, bz2, vim 
 RUN apt-get -y update && \
-	apt-get install -y bzip2 && \
-	apt-get install vim && \
+	apt-get -y full-upgrade
 	apt-get install -y apt-utils && \
 	apt-get install software-properties-common && \
 	add-apt-repository ppa:deadsnakes/ppa && \
