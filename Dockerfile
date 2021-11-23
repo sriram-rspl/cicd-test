@@ -4,11 +4,13 @@ FROM ubuntu:latest
 
 # WORKDIR /space
 
-#Install WGET, tar, bz2, ed 
-RUN apt install -y wget && \
- 	apt install -y tar && \
-	apt install -y bzip2 && \
-	apt -y update && \
-	apt install -y ed && \
-	apt install -y apt-utils && \
-	apt -y clean all
+#Install WGET, bz2, vim 
+RUN apt-get install -y wget && \
+	apt-get install -y bzip2 && \
+	apt-get -y update && \
+	apt-get install vim && \
+	apt-get install -y apt-utils && \
+	apt-get install software-properties-common && \
+	add-apt-repository ppa:deadsnakes/ppa && \
+	apt-get install -y python3-pip && \
+	apt-get -y clean all
